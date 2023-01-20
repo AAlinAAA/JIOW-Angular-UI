@@ -13,10 +13,15 @@
     </p>
     <p>
         <mat-form-field appearance="fill" floatLabel="always">
-            <mat-label>Amount</mat-label>
+            <mat-label>Цена</mat-label>
             <input matInput type="number" class="example-right-align" placeholder="0" [(ngModel)]="price">
             <span matPrefix>Р&nbsp;</span>
             <span matSuffix>.00</span>
         </mat-form-field>
     </p>
 </mat-card>
+<mat-card-actions>
+    <button mat-raised-button color="basic" routerLink="/productDetail">
+        Создать Продукт
+    </button>
+</mat-card-actions>
