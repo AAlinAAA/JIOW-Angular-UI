@@ -19,9 +19,20 @@
             <span matSuffix>.00</span>
         </mat-form-field>
     </p>
-</mat-card>
+
+<mat-form-field appearance="fill">
+    <mat-label>Product</mat-label>
+    <input matInput type="text" [formControl]="textFormControl" placeholder="Redact one" aria-label="Base"
+        [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>
 <mat-card-actions>
     <button mat-raised-button color="basic" routerLink="/productDetail">
         Создать Продукт
     </button>
 </mat-card-actions>
+</mat-card>
